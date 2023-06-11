@@ -1,3 +1,5 @@
+import { Link, Outlet } from "react-router-dom"
+import Header from "./Components/Header"
 
 
 function App() {
@@ -5,7 +7,8 @@ function App() {
   return (
    
       <div>
-      <a href="/">Toy Merchant</a>
+      <Header></Header>
+      <Outlet></Outlet>
       </div>
       
   
