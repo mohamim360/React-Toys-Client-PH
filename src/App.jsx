@@ -1,7 +1,3 @@
-import React from 'react'
-
-
-
 
 import Alltoys from './Components/Alltoys.jsx'
 import Home from './Components/Home.jsx'

@@ -10,6 +10,7 @@ function Toy() {
       <div>
       <Header></Header>
       <Outlet></Outlet>
+      
       </div>
       
   
