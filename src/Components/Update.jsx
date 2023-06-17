@@ -1,4 +1,9 @@
-const AddToy = () => {
+import React from 'react';
+
+const Update = () => {
+  const coffee = useLoaderData();
+  const { _id, name, quantity, price, rating, subCategory,description , pictureUrl} = coffee;
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -22,8 +27,8 @@ const AddToy = () => {
      
     };
 console.log(toyData)
-    fetch("http://localhost:5000/addedtoy", {
-      method: "POST",
+    fetch("http://localhost:5000/addedtoy/${_id}", {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
@@ -32,11 +37,12 @@ console.log(toyData)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
-          alert("toy added");
+        if (data.modifiedCount>0) {
+          alert("update added");
         }
       });
-  };
+    
+    };
 
   return (
     <div className="max-w-md mx-auto p-4 bg-white shadow-md">
@@ -116,4 +122,4 @@ console.log(toyData)
   );
 };
 
-export default AddToy;
+export default Update;
