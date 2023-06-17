@@ -9,7 +9,7 @@ const AllToys = () => {
   const history = useHistory();
 
   useEffect(() => {
-    fetch("http://localhost:3000/data")
+    fetch("https://toys-server-mohamim360.vercel.app/data")
       .then((res) => res.json())
       .then((data) => {
         setData(data);

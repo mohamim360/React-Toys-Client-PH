@@ -5,7 +5,7 @@ const MyToys = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/addedtoy')
+    fetch('https://toys-server-mohamim360.vercel.app/addedtoy')
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -16,7 +16,7 @@ const MyToys = () => {
 
   const handleDelete = (toyId) => {
  
-    fetch(`http://localhost:5000/addedtoy/${toyId}`, {
+    fetch(`https://toys-server-mohamim360.vercel.app/addedtoy/${toyId}`, {
       method: 'DELETE'
   })
       .then(res => res.json())

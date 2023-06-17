@@ -27,7 +27,7 @@ const Update = () => {
      
     };
 console.log(toyData)
-    fetch("http://localhost:5000/addedtoy/${_id}", {
+    fetch("https://toys-server-mohamim360.vercel.app/addedtoy/${_id}", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

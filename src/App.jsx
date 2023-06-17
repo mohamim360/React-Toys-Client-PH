@@ -39,7 +39,7 @@ function App(){
         ,{
           path: "/update/:id",
             element: <Update></Update>,
-            loader: ({params}) => fetch(`http://localhost:5000/addedtoy/${params.id}`)
+            loader: ({params}) => fetch(`https://toys-server-mohamim360.vercel.app/addedtoy/${params.id}`)
            
         }
         ,
