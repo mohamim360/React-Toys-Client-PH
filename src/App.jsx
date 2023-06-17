@@ -5,6 +5,8 @@ import Home from './Components/Home.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Toy from './Toy.jsx';
 import NotFound from './Components/NotFound.jsx';
+import View from './Components/View.jsx';
+import AddToy from './Components/AddToy.jsx';
 function App(){
   const router = createBrowserRouter([
     {
@@ -21,6 +23,16 @@ function App(){
         {
           path: "/alltoys",
             element: <Alltoys></Alltoys>,
+        }
+        ,
+        {
+          path: "/addtoy",
+            element: <AddToy></AddToy>,
+        }
+        ,
+        {
+          path: "/view",
+            element: <View></View>,
         }
       ]
     },

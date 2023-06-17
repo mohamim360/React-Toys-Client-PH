@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 
 const AllToys = () => {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [visibleData, setVisibleData] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     fetch("http://localhost:3000/data")
@@ -22,6 +24,10 @@ const AllToys = () => {
       toy.toy_name.toLowerCase().includes(event.target.value.toLowerCase())
     );
     setVisibleData(filteredData.slice(0, 20));
+  };
+
+  const handleViewDetails = (toyId) => {
+    history.push(`/toy/${toyId}`);
   };
 
   return (
@@ -56,9 +62,10 @@ const AllToys = () => {
         <td className="py-2">${toy.price.toFixed(2)}</td>
         <td className="px-3">{toy.available_quantity}</td>
         <td className="py-2">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded">
+          <Link to="/view"><button className="btn btn-danger"
+           onClick={() => handleViewDetails(toy.id)}>
             View Details
-          </button>
+          </button></Link>
         </td>
       </tr>
     ))}
